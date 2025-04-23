@@ -41,3 +41,8 @@ The issue is that `ApiClient.java` generated using `inputSpecRootDirectory`
      if (!baseUrl.endsWith("/"))
        baseUrl = baseUrl + "/";
 ```
+
+# How to reproduce
+
+ - Run `mvn clean install`.
+ - Observe the files difference with `diff -upd ./using-inputSpec/target/generated-sources/openapi/src/main/java/com/example/ApiClient.java ./using-inputSpecRootDirectory/target/generated-sources/openapi/src/main/java/com/example/ApiClient.java`.
