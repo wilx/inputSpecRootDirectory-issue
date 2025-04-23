@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.example</groupId>
+	<artifactId>inputSpecRootDirectory-issue-root</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>inputSpecRootDirectory-issue-root</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>using-inputSpec</module>
+		<module>using-inputSpecRootDirectory</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.squareup.retrofit2</groupId>
+				<artifactId>retrofit-bom</artifactId>
+				<version>2.11.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson</groupId>
+				<artifactId>jackson-bom</artifactId>
+				<version>2.18.3</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${apm.ng.cc.spring-cloud-releasetrain.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>3.3.10</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>retrofit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>converter-jackson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>converter-scalars</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>adapter-rxjava2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.openapitools</groupId>
+			<artifactId>jackson-databind-nullable</artifactId>
+			<version>0.2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.ws.rs</groupId>
+			<artifactId>jakarta.ws.rs-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.openapitools</groupId>
+					<artifactId>openapi-generator-maven-plugin</artifactId>
+					<version>7.12.0</version>
+					<configuration>
+						<generatorName>java</generatorName>
+						<apiPackage>com.example.api</apiPackage>
+						<modelPackage>com.example.model</modelPackage>
+						<invokerPackage>com.example</invokerPackage>
+						<supportingFilesToGenerate>CollectionFormats.java,StringUtil.java,ApiClient.java,ServerConfiguration.java,ServerVariable.java,HttpBearerAuth.java,HttpBasicAuth.java,ApiKeyAuth.java,JSON.java,RFC3339DateFormat.java</supportingFilesToGenerate>
+						<skipValidateSpec>false</skipValidateSpec>
+						<generateAliasAsModel>false</generateAliasAsModel>
+						<generateApis>true</generateApis>
+						<generateModels>true</generateModels>
+						<generateSupportingFiles>true</generateSupportingFiles>
+						<configOptions>
+							<hideGenerationTimestamp>true</hideGenerationTimestamp>
+							<title>example-api-retrofit</title>
+							<useEnumCaseInsensitive>true</useEnumCaseInsensitive>
+							<useJakartaEe>true</useJakartaEe>
+							<asyncNative>true</asyncNative>
+							<annotationLibrary>swagger2</annotationLibrary>
+							<generateBuilders>true</generateBuilders>
+							<library>retrofit2</library>
+							<useRxJava2>true</useRxJava2>
+							<serializationLibrary>jackson</serializationLibrary>
+							<generateSupportingFiles>true</generateSupportingFiles>
+						</configOptions>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
