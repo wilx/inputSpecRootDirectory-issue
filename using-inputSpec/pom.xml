@@ -21,7 +21,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpecRootDirectory>${project.basedir}${file.separator}..${file.separator}openapi</inputSpecRootDirectory>
+							<inputSpec>${project.basedir}${file.separator}..${file.separator}openapi${file.separator}api.yaml</inputSpec>
 						</configuration>
 					</execution>
 				</executions>

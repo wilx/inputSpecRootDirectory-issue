@@ -40,7 +40,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}${file.separator}..${file.separator}openapi${file.separator}api.yaml</inputSpec>
+							<inputSpecRootDirectory>${project.basedir}${file.separator}..${file.separator}openapi</inputSpecRootDirectory>
 						</configuration>
 					</execution>
 				</executions>
